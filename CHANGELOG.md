@@ -1,3 +1,16 @@
+## 0.1.1
+
+### Changed
+
+- Annotations (`@RelaxTable`, `@PrimaryKey`, `@Column`, `@Ignore`) are now the single source of truth in this package
+- Added `relax_orm_annotations.dart` — lightweight export without Flutter/Drift dependencies, safe for use by code generators and pure-Dart contexts
+- SDK constraint is now bounded (`>=3.11.0 <4.0.0`)
+- Added `license`, `platforms`, `issue_tracker` metadata to pubspec
+
+### Fixed
+
+- Removed runtime dependency on `relax_orm_generator` — heavy build-time packages (`analyzer`, `source_gen`, `build`) are no longer pulled into the app's dependency tree
+
 ## 0.1.0
 
 - Initial release
