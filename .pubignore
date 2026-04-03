@@ -1,0 +1,9 @@
+# Files not needed in the published package
+cahier_des_charges.md
+.metadata
+.idea/
+*.iml
+
+# Build artifacts
+build/
+.dart_tool/
