@@ -1,3 +1,5 @@
+import 'package:uuid/uuid.dart';
+
 import 'column_def.dart';
 
 /// Defines the schema for a table in RelaxORM.
@@ -68,13 +70,17 @@ class TableSchema<T> {
 
   /// Generates the CREATE TABLE SQL statement for this schema.
   String toCreateTableSql() {
-    final columnsSql = columns.map((col) {
-      final parts = <String>[col.name, col.sqlType];
-      if (col.isPrimaryKey) parts.add('PRIMARY KEY');
-      if (!col.isNullable && !col.isPrimaryKey) parts.add('NOT NULL');
-      if (col.defaultValue != null) parts.add('DEFAULT ${col.defaultValue}');
-      return parts.join(' ');
-    }).join(', ');
+    final columnsSql = columns
+        .map((col) {
+          final parts = <String>[col.name, col.sqlType];
+          if (col.isPrimaryKey) parts.add('PRIMARY KEY');
+          if (!col.isNullable && !col.isPrimaryKey) parts.add('NOT NULL');
+          if (col.defaultValue != null) {
+            parts.add('DEFAULT ${col.defaultValue}');
+          }
+          return parts.join(' ');
+        })
+        .join(', ');
 
     return 'CREATE TABLE IF NOT EXISTS $tableName ($columnsSql)';
   }
@@ -84,7 +90,13 @@ class TableSchema<T> {
     final dartMap = toMap(entity);
     final sqlMap = <String, Object?>{};
     for (final col in columns) {
-      sqlMap[col.name] = col.toSql(dartMap[col.name]);
+      var value = dartMap[col.name];
+
+      if (value == null && col.isPrimaryKey && col.type == ColumnType.text) {
+        value = const Uuid().v4();
+      }
+
+      sqlMap[col.name] = col.toSql(value);
     }
     return sqlMap;
   }

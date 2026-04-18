@@ -1,6 +1,6 @@
 name: relax_orm
 description: "A local-first ORM for Flutter with offline support, real-time streams, automatic sync, and encryption."
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/KalybosPro/relax_orm
 repository: https://github.com/KalybosPro/relax_orm
 issue_tracker: https://github.com/KalybosPro/relax_orm/issues
@@ -30,6 +30,7 @@ dependencies:
   drift: ^2.32.1
   drift_flutter: ^0.3.0
   path_provider: ^2.1.5
+  uuid: ^4.5.3
 
 dev_dependencies:
   flutter_test:

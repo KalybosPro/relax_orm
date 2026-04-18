@@ -1,3 +1,18 @@
+## 0.1.2
+
+### Added
+
+- Automatic UUID generation for text primary keys when inserting an entity with a null ID
+
+### Changed
+
+- `Collection.add()` now queues the persisted entity after ID generation so sync payloads keep the effective primary key
+- Bumped `relax_orm_generator` to `^0.1.2`
+
+### Fixed
+
+- Synced inserts with generated text primary keys now keep database rows and queued operations aligned
+
 ## 0.1.1
 
 ### Changed

@@ -24,7 +24,7 @@ class Collection<T> {
   final SyncEngine? _syncEngine;
 
   Collection(this._db, this._schema, {SyncEngine? syncEngine})
-      : _syncEngine = syncEngine;
+    : _syncEngine = syncEngine;
 
   /// Inserts a new entity into the collection.
   ///
@@ -32,7 +32,8 @@ class Collection<T> {
   Future<void> add(T entity) async {
     final row = _schema.entityToRow(entity);
     await _db.rawInsert(_schema.tableName, row);
-    await _queueSync(SyncOperationType.add, entity);
+    final updatedEntity = _schema.rowToEntity(row);
+    await _queueSync(SyncOperationType.add, updatedEntity);
   }
 
   /// Inserts multiple entities in a single batch operation.
@@ -86,11 +87,7 @@ class Collection<T> {
 
   /// Deletes all rows in the collection.
   Future<void> deleteAll() async {
-    await _db.rawDelete(
-      _schema.tableName,
-      where: '1 = 1',
-      whereArgs: [],
-    );
+    await _db.rawDelete(_schema.tableName, where: '1 = 1', whereArgs: []);
   }
 
   /// Retrieves a single entity by primary key, or `null` if not found.
@@ -121,9 +118,9 @@ class Collection<T> {
   ///
   /// The stream emits a new list every time the table is modified.
   Stream<List<T>> watchAll() {
-    return _db.rawWatch(_schema.tableName).map(
-          (rows) => rows.map(_schema.rowToEntity).toList(),
-        );
+    return _db
+        .rawWatch(_schema.tableName)
+        .map((rows) => rows.map(_schema.rowToEntity).toList());
   }
 
   /// Watches a single entity by primary key as a reactive stream.
