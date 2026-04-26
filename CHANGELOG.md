@@ -1,3 +1,15 @@
+## 0.1.4
+
+### Added
+
+- Added public `RelaxOrmJson` helpers for generated schemas that need JSON serialization and deserialization
+- Added base64 helpers for `Uint8List` values used inside JSON-backed fields
+
+### Changed
+
+- Exported `src/core/relax_orm_json.dart` from the main `relax_orm.dart` library
+- Bumped `relax_orm_generator` to `^0.1.6` to support generated mappings for nested objects and `List<T>` fields
+
 ## 0.1.3
 
 - Update dependencies

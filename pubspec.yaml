@@ -1,6 +1,6 @@
 name: relax_orm
 description: "A local-first ORM for Flutter with offline support, real-time streams, automatic sync, and encryption."
-version: 0.1.3
+version: 0.1.4
 homepage: https://github.com/KalybosPro/relax_orm
 repository: https://github.com/KalybosPro/relax_orm
 issue_tracker: https://github.com/KalybosPro/relax_orm/issues
@@ -37,7 +37,7 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^6.0.0
   build_runner: ^2.4.0
-  relax_orm_generator: ^0.1.5
+  relax_orm_generator: ^0.1.6
 
 # Enable SQLite3MultipleCiphers for database encryption.
 hooks:

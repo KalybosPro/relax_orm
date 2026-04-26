@@ -26,6 +26,7 @@ export 'src/schema/table_schema.dart';
 export 'src/core/relax_db.dart';
 export 'src/core/collection.dart';
 export 'src/core/query_builder.dart';
+export 'src/core/relax_orm_json.dart';
 
 // Sync engine
 export 'src/sync/sync_adapter.dart';
