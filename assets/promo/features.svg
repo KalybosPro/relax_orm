@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="100%" style="stop-color:#161B22"/>
+    </linearGradient>
+    <linearGradient id="g-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#065F46"/>
+      <stop offset="100%" style="stop-color:#064E3B"/>
+    </linearGradient>
+    <linearGradient id="g-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E3A5F"/>
+      <stop offset="100%" style="stop-color:#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="g-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B1D72"/>
+      <stop offset="100%" style="stop-color:#2D1B69"/>
+    </linearGradient>
+    <linearGradient id="g-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#78350F"/>
+      <stop offset="100%" style="stop-color:#92400E"/>
+    </linearGradient>
+    <linearGradient id="g-red" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7F1D1D"/>
+      <stop offset="100%" style="stop-color:#991B1B"/>
+    </linearGradient>
+    <linearGradient id="g-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#134E4A"/>
+      <stop offset="100%" style="stop-color:#115E59"/>
+    </linearGradient>
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6EE7B7"/>
+      <stop offset="100%" style="stop-color:#3B82F6"/>
+    </linearGradient>
+    <filter id="card-shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="8" flood-color="#000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+
+  <!-- subtle glow -->
+  <circle cx="600" cy="315" r="400" fill="#3B82F6" opacity="0.03"/>
+
+  <!-- Header -->
+  <text x="600" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="38" font-weight="800" fill="url(#title-grad)" text-anchor="middle">relax_orm — Feature Overview</text>
+  <text x="600" y="106" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="17" fill="#6E7681" text-anchor="middle">The local-first Flutter ORM with everything included</text>
+
+  <!-- Divider -->
+  <rect x="460" y="120" width="280" height="2" rx="1" fill="url(#title-grad)" opacity="0.6"/>
+
+  <!-- === CARDS === -->
+  <!-- Card helper: 3 per row, 2 rows. W=340 H=180, gap=30, start x=60 y=148 -->
+
+  <!-- 1. Offline-first -->
+  <g transform="translate(60, 148)" filter="url(#card-shadow)">
+    <rect width="340" height="180" rx="14" fill="url(#g-green)" stroke="#065F46" stroke-width="1"/>
+    <!-- icon circle -->
+    <circle cx="42" cy="46" r="26" fill="#10B981" opacity="0.2"/>
+    <text x="42" y="55" font-size="24" text-anchor="middle" font-family="sans-serif">📶</text>
+    <text x="80" y="38" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#6EE7B7">Offline-First</text>
+    <text x="80" y="58" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#A7F3D0">Works without internet</text>
+    <rect x="20" y="76" width="300" height="1" fill="#10B981" opacity="0.2"/>
+    <text x="20" y="104" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#D1FAE5">All writes succeed locally and are</text>
+    <text x="20" y="124" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#D1FAE5">queued. Auto-syncs when back online.</text>
+    <text x="20" y="158" font-family="'Courier New', monospace" font-size="12" fill="#6EE7B7">await users.add(user); // always works</text>
+  </g>
+
+  <!-- 2. Real-time Streams -->
+  <g transform="translate(430, 148)" filter="url(#card-shadow)">
+    <rect width="340" height="180" rx="14" fill="url(#g-blue)" stroke="#1D4ED8" stroke-width="1"/>
+    <circle cx="42" cy="46" r="26" fill="#3B82F6" opacity="0.2"/>
+    <text x="42" y="55" font-size="24" text-anchor="middle" font-family="sans-serif">⚡</text>
+    <text x="80" y="38" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#93C5FD">Real-time Streams</text>
+    <text x="80" y="58" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#BFDBFE">Reactive UI out of the box</text>
+    <rect x="20" y="76" width="300" height="1" fill="#3B82F6" opacity="0.2"/>
+    <text x="20" y="104" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#DBEAFE">watchAll() / watchOne() streams</text>
+    <text x="20" y="124" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#DBEAFE">re-emit on every table change.</text>
+    <text x="20" y="158" font-family="'Courier New', monospace" font-size="12" fill="#93C5FD">users.watchAll().listen(rebuild);</text>
+  </g>
+
+  <!-- 3. Encryption -->
+  <g transform="translate(800, 148)" filter="url(#card-shadow)">
+    <rect width="340" height="180" rx="14" fill="url(#g-purple)" stroke="#6D28D9" stroke-width="1"/>
+    <circle cx="42" cy="46" r="26" fill="#8B5CF6" opacity="0.2"/>
+    <text x="42" y="55" font-size="24" text-anchor="middle" font-family="sans-serif">🔐</text>
+    <text x="80" y="38" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#C4B5FD">Encryption</text>
+    <text x="80" y="58" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#DDD6FE">AES via SQLite3MultipleCiphers</text>
+    <rect x="20" y="76" width="300" height="1" fill="#8B5CF6" opacity="0.2"/>
+    <text x="20" y="104" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#EDE9FE">Transparent full-database encryption.</text>
+    <text x="20" y="124" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#EDE9FE">Unreadable without the key.</text>
+    <text x="20" y="158" font-family="'Courier New', monospace" font-size="12" fill="#C4B5FD">encryptionKey: 'your-secret'</text>
+  </g>
+
+  <!-- 4. Query Builder -->
+  <g transform="translate(60, 358)" filter="url(#card-shadow)">
+    <rect width="340" height="180" rx="14" fill="url(#g-orange)" stroke="#B45309" stroke-width="1"/>
+    <circle cx="42" cy="46" r="26" fill="#F59E0B" opacity="0.2"/>
+    <text x="42" y="55" font-size="24" text-anchor="middle" font-family="sans-serif">🔍</text>
+    <text x="80" y="38" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#FCD34D">Query Builder</text>
+    <text x="80" y="58" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#FDE68A">Fluent type-safe filters</text>
+    <rect x="20" y="76" width="300" height="1" fill="#F59E0B" opacity="0.2"/>
+    <text x="20" y="104" font-family="'Courier New', monospace" font-size="12" fill="#FDE68A">.where('age', greaterThan: 18)</text>
+    <text x="20" y="124" font-family="'Courier New', monospace" font-size="12" fill="#FDE68A">.orderBy('name').limit(10)</text>
+    <text x="20" y="144" font-family="'Courier New', monospace" font-size="12" fill="#FDE68A">.find() / .watch()</text>
+    <text x="20" y="168" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#FFFBEB">11 filter operators supported</text>
+  </g>
+
+  <!-- 5. Sync Engine -->
+  <g transform="translate(430, 358)" filter="url(#card-shadow)">
+    <rect width="340" height="180" rx="14" fill="url(#g-red)" stroke="#B91C1C" stroke-width="1"/>
+    <circle cx="42" cy="46" r="26" fill="#EF4444" opacity="0.2"/>
+    <text x="42" y="55" font-size="24" text-anchor="middle" font-family="sans-serif">🔄</text>
+    <text x="80" y="38" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#FCA5A5">Sync Engine</text>
+    <text x="80" y="58" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#FECACA">Push/pull with conflict resolution</text>
+    <rect x="20" y="76" width="300" height="1" fill="#EF4444" opacity="0.2"/>
+    <text x="20" y="104" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#FEE2E2">Bring your own API. remoteWins /</text>
+    <text x="20" y="124" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#FEE2E2">localWins / custom resolver.</text>
+    <text x="20" y="158" font-family="'Courier New', monospace" font-size="12" fill="#FCA5A5">engine.syncAll(); // manual or auto</text>
+  </g>
+
+  <!-- 6. Code Generation -->
+  <g transform="translate(800, 358)" filter="url(#card-shadow)">
+    <rect width="340" height="180" rx="14" fill="url(#g-teal)" stroke="#0F766E" stroke-width="1"/>
+    <circle cx="42" cy="46" r="26" fill="#14B8A6" opacity="0.2"/>
+    <text x="42" y="55" font-size="24" text-anchor="middle" font-family="sans-serif">⚙️</text>
+    <text x="80" y="38" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="700" fill="#5EEAD4">Code Generation</text>
+    <text x="80" y="58" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="13" fill="#99F6E4">Annotate → generate schema</text>
+    <rect x="20" y="76" width="300" height="1" fill="#14B8A6" opacity="0.2"/>
+    <text x="20" y="104" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#CCFBF1">@RelaxTable() on your model,</text>
+    <text x="20" y="124" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#CCFBF1">run build_runner. Done.</text>
+    <text x="20" y="158" font-family="'Courier New', monospace" font-size="12" fill="#5EEAD4">dart run build_runner build</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="598" font-family="-apple-system, 'Segoe UI', sans-serif" font-size="14" fill="#484F58" text-anchor="middle">pub.dev/packages/relax_orm · MIT License · Zero SaaS dependency</text>
+</svg>
